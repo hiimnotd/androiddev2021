@@ -5,12 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WeatherActivity">
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <LinearLayout
         android:id="@+id/Fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
         tools:ignore="MissingConstraints">
 
-    </FrameLayout>
+        <fragment
+            android:id="@+id/weatherFragment"
+            android:name="vn.edu.usth.myapplication.WeatherFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <fragment
+            android:name="vn.edu.usth.myapplication.ForecastFragment"
+            android:id="@+id/forecastFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
