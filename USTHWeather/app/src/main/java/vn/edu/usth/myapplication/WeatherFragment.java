@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 
 public class WeatherFragment extends Fragment {
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -18,5 +20,10 @@ public class WeatherFragment extends Fragment {
         View weatherFragment = inflater.inflate(R.layout.fragment_weather, container, false);
         weatherFragment.setBackgroundColor(Color.parseColor("#6FFFAA"));
         return  weatherFragment;
+    }
+
+    public static Fragment newInstance() {
+        WeatherFragment weatherFragment = new WeatherFragment();
+        return weatherFragment;
     }
 }
