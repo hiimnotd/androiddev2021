@@ -10,20 +10,50 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.android.material.tabs.TabLayout;
+
 public class WeatherActivity<DetailFragment> extends AppCompatActivity {
 
+    public class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
+        private final int PAGE_COUNT = 3;
+        private String titles[] = new String[] { "Hanoi, Vietnam", "Paris, France", "Toulouse, France" };
+        public HomeFragmentPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
 
+        @Override
+        public int getCount() {
+            return PAGE_COUNT;
+        }
+
+        @Override
+        public Fragment getItem(int page) {
+            switch (page) {
+                case 0: return HanoiFragment.newInstance();
+                case 1: return ParisFragment.newInstance();
+                case 2: return ToulouseFragment.newInstance();
+            }
+            return new Fragment();
+        }
+
+        @Override
+        public CharSequence getPageTitle(int page) {
+            return titles[page];
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
 
-        PagerAdapter adapter = new HomeFragmentPagerAdapter(
-                getSupportFragmentManager());
+        PagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
         pager.setOffscreenPageLimit(3);
         pager.setAdapter(adapter);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
+        tabLayout.setupWithViewPager(pager);
 
         Log.i("Activity LifeCycle","OnCreate_");
     }
@@ -58,30 +88,4 @@ public class WeatherActivity<DetailFragment> extends AppCompatActivity {
         Log.i("Activity LifeCycle","OnDestroy_");
     }
 
-    public class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
-        private final int PAGE_COUNT = 3;
-        private String titles[] = new String[] { "WeatherNForecast", "Weather", "Forecast" };
-        public HomeFragmentPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-        @Override
-        public int getCount() {
-            return PAGE_COUNT; // number of pages for a ViewPager
-        }
-        @Override
-        public Fragment getItem(int page) {
-        // returns an instance of Fragment corresponding to the specified page
-            switch (page) {
-                case 0: return WeatherAndForecastFragment.newInstance();
-                case 1: return WeatherFragment.newInstance();
-                case 2: return ForecastFragment.newInstance();
-            }
-            return new EmptyFragment();
-        }
-        @Override
-        public CharSequence getPageTitle(int page) {
-        // returns a tab title corresponding to the specified page
-            return titles[page];
-        }
-    }
 }

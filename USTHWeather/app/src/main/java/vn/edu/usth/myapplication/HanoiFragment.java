@@ -1,6 +1,5 @@
 package vn.edu.usth.myapplication;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,21 +9,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class ForecastFragment extends Fragment {
+public class HanoiFragment extends Fragment {
 
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_forecast, container, false);
-        view.setBackgroundColor(Color.parseColor("#A6E2FC"));
-        return view;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_hanoi, container, false);
     }
 
     public static Fragment newInstance() {
-        ForecastFragment forecastFragment = new ForecastFragment();
-        return forecastFragment;
+        HanoiFragment hanoiFragment = new HanoiFragment();
+        return hanoiFragment;
     }
 }
