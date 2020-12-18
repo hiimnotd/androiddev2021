@@ -14,14 +14,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#6FFFAA">
+            android:background="@color/LightGreen">
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12C"
+                android:textSize="@dimen/nortext_font_size"
+                android:layout_alignParentLeft="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12C\nCloudy"
-                android:textSize="16sp"
-                android:layout_alignParentLeft="true"/>
+                android:layout_below="@+id/temp"
+                android:text="@string/cloudy"
+                android:textSize="@dimen/nortext_font_size"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -33,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Paris"
-                android:textSize="16sp"
+                android:textSize="@dimen/nortext_font_size"
                 android:layout_alignParentRight="true"/>
 
         </RelativeLayout>
@@ -43,7 +51,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:background="#A6E2FC">
+            android:background="@color/LightBlue">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -52,25 +60,35 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/fill_width"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Mon"
-                    android:textSize="16sp" />
+                    android:text="@string/Mon"
+                    android:textSize="@dimen/nortext_font_size" />
 
                 <ImageView
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/fill_width"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@drawable/rain_cloudy" />
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="@dimen/fill_width"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:text="Rainy and cloudy\n12C - 15C"
-                    android:textSize="16sp" />
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rain_n_cloudy"
+                        android:textSize="@dimen/nortext_font_size"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12C - 15C"/>
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -80,26 +98,36 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/fill_width"
                     android:layout_height="wrap_content"
 
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Thu"
-                    android:textSize="16sp" />
+                    android:text="@string/Tue"
+                    android:textSize="@dimen/nortext_font_size" />
 
                 <ImageView
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/fill_width"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@drawable/rain_cloudy" />
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="@dimen/fill_width"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:text="Rainy and cloudy\n12C - 15C"
-                    android:textSize="16sp" />
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rain_n_cloudy"
+                        android:textSize="@dimen/nortext_font_size"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12C - 15C"/>
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -109,26 +137,36 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/fill_width"
 
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Wed"
-                    android:textSize="16sp" />
+                    android:text="@string/Wed"
+                    android:textSize="@dimen/nortext_font_size" />
 
                 <ImageView
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/fill_width"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@drawable/cloudy" />
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="@dimen/fill_width"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:text="Cloudy\n12C - 14C"
-                    android:textSize="16sp" />
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cloudy"
+                        android:textSize="@dimen/nortext_font_size"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12C - 14C"/>
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -138,26 +176,36 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/fill_width"
                     android:layout_height="wrap_content"
 
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Thu"
-                    android:textSize="16sp" />
+                    android:text="@string/Thu"
+                    android:textSize="@dimen/nortext_font_size" />
 
                 <ImageView
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/fill_width"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@drawable/cloudy" />
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="@dimen/fill_width"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:text="Cloudy\n12C - 16C"
-                    android:textSize="16sp" />
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cloudy"
+                        android:textSize="@dimen/nortext_font_size"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12C - 16C"/>
+                </LinearLayout>
             </LinearLayout>
 
             <!--        <LinearLayout-->
@@ -167,26 +215,26 @@
             <!--            android:orientation="horizontal">-->
 
             <!--            <TextView-->
-            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_width="@dimen/fill_width"-->
             <!--                android:layout_height="wrap_content"-->
 
             <!--                android:layout_weight="1"-->
             <!--                android:gravity="center"-->
-            <!--                android:text="Fri"-->
-            <!--                android:textSize="16sp" />-->
+            <!--                android:text="@string/Fri"-->
+            <!--                android:textSize="@dimen/nortext_font_size" />-->
 
             <!--            <ImageView-->
-            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_width="@dimen/fill_width"-->
             <!--                android:layout_height="wrap_content"-->
             <!--                android:layout_weight="1"-->
             <!--                android:src="@drawable/cloudy" />-->
 
             <!--            <TextView-->
-            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_width="@dimen/fill_width"-->
             <!--                android:layout_height="wrap_content"-->
             <!--                android:layout_weight="3"-->
             <!--                android:text="Cloudy\n13C - 16C"-->
-            <!--                android:textSize="16sp" />-->
+            <!--                android:textSize="@dimen/nortext_font_size" />-->
             <!--        </LinearLayout>-->
 
             <!--        <LinearLayout-->
@@ -196,26 +244,26 @@
             <!--            android:orientation="horizontal">-->
 
             <!--            <TextView-->
-            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_width="@dimen/fill_width"-->
             <!--                android:layout_height="wrap_content"-->
 
             <!--                android:layout_weight="1"-->
             <!--                android:gravity="center"-->
-            <!--                android:text="Sat"-->
-            <!--                android:textSize="16sp" />-->
+            <!--                android:text="@string/Sat"-->
+            <!--                android:textSize="@dimen/nortext_font_size" />-->
 
             <!--            <ImageView-->
-            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_width="@dimen/fill_width"-->
             <!--                android:layout_height="wrap_content"-->
             <!--                android:layout_weight="1"-->
             <!--                android:src="@drawable/partly_cloudy" />-->
 
             <!--            <TextView-->
-            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_width="@dimen/fill_width"-->
             <!--                android:layout_height="wrap_content"-->
             <!--                android:layout_weight="3"-->
             <!--                android:text="Partly cloudy\n12C - 17C"-->
-            <!--                android:textSize="16sp" />-->
+            <!--                android:textSize="@dimen/nortext_font_size" />-->
             <!--        </LinearLayout>-->
 
             <!--x`-->

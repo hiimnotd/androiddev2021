@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="p_cloudy">Ít Mây</string>
+    <string name="cloudy">Nhiều Mây</string>
+    <string name="rain_n_cloudy">Có Mưa</string>
+    <string name="city_hn">Hà Nội</string>
+    <string name="Mon">Thứ 2</string>
+    <string name="Tue">Thứ 3</string>
+    <string name="Wed">Thứ 4</string>
+    <string name="Thu">Thứ 5</string>
+    <string name="Fri">Thứ 6</string>
+    <string name="Sat">Thứ 7</string>
+    <string name="Sun">Chủ Nhật</string>
+</resources>
