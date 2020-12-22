@@ -7,12 +7,15 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.google.android.material.tabs.TabLayout;
 
 public class WeatherActivity<DetailFragment> extends AppCompatActivity {
+
+    private MediaPlayer player;
 
     public class HomeFragmentPagerAdapter extends FragmentPagerAdapter {
         private final int PAGE_COUNT = 3;
@@ -47,6 +50,9 @@ public class WeatherActivity<DetailFragment> extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
 
+        player = MediaPlayer.create(this,R.raw.yeu);
+        player.start();
+
         PagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
         pager.setOffscreenPageLimit(3);
@@ -79,6 +85,11 @@ public class WeatherActivity<DetailFragment> extends AppCompatActivity {
     @Override
     protected void onStop(){
         super.onStop();
+
+        player.stop();
+        player.release();
+        player = null;
+
         Log.i("Activity LifeCycle","OnStop_");
     }
 
